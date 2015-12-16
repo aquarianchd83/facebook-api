@@ -1,0 +1,17 @@
+﻿@if (FB_api.Helpers.StaticValue.Profile != null)
+{
+    <div style="float: right">
+        Hello, @Html.ActionLink(FB_api.Helpers.StaticValue.Profile.Name, "", "")!
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+        {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+        }
+    </div>
+    <div style="float: left">
+        @Html.ActionLink("Friends", "Index", "Friend")
+        @Html.ActionLink("Profile", "", "")
+        @Html.ActionLink("Post Message", "", "")
+        @Html.ActionLink("Share", "", "")
+    </div>
+}

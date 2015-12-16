@@ -1,0 +1,13 @@
+﻿@model FB_api.Models.FacebookFriendsModel
+
+@{
+    ViewBag.Title = "FB - friends listing";
+}
+
+<h2>Facebook Friends Listing (@Model.friendsListing.Count)</h2>
+ 
+<table>
+    @foreach(var friend in Model.friendsListing){
+        <tr><td>@friend.id</td><td>@friend.name</td></tr>
+    }
+</table>
